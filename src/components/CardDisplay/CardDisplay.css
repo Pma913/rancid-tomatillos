@@ -1,5 +1,7 @@
 .card-display {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 5px 10px;
+  background-color: black;
 }
