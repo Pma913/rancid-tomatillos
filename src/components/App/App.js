@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import CardDisplay from '../CardDisplay/CardDisplay';
 
 class App extends Component {
   constructor() {
@@ -8,10 +9,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Header />
-        <CardDisplay /> */}
-      </div>
+      <main>
+        <div>
+          <Header />
+          <CardDisplay />
+        </div>
+      </main>
     )
   }
 }

@@ -5,10 +5,12 @@ header {
   border-bottom: 3px solid #C20000;
 }
 
-.title {
+.title-logo {
   margin-top: 10px;
   margin-left: 45px;
   width: 400px;
+  position: absolute;
+  top: 0px;
 }
 
 .logo {
