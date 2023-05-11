@@ -6,7 +6,7 @@ import logo from "../../Images/tomatillos.png";
 const Header = () => {
   return (
     <header>
-      <img className="title" src={title} alt="Rancid tomatillos text" />
+      <img className="title-logo" src={title} alt="Rancid tomatillos text" />
       <img className="logo" src={logo} alt=" three cartoon tomatillos"/>
     </header>
   )
