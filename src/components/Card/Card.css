@@ -5,8 +5,8 @@
   height: 480px;
   width: 280px;
   border: solid 2px rgb(0, 0, 0);
-  background-color: rgb(233, 202, 161);
-  border-radius: 15px;
+  background-color: rgb(35, 31, 31);
+  border-radius: 12px;
   position: relative;
   margin: 10px;
 }
@@ -15,14 +15,15 @@
   margin-top: 8px;
   height: 400px;
   width: 265px;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 .title {
   height: 60px;
   text-align: center;
   margin: 5px;
-  overflow: scroll;
   position: absolute;
   top: 415px;
+  font-size: 20px;
+  color: white;
 }
