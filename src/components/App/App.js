@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CardDisplay from '../CardDisplay/CardDisplay';
+import { getMovies } from '../../utilities/api-calls'
 
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      movies: []
+    }
+  }
+
+  componentDidMount() {
+    getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    .then(data => this.setState({ movies: data.movies }))
+    .catch(err => console.log(err));
   }
 
   render() {
@@ -12,7 +22,7 @@ class App extends Component {
       <main>
         <div>
           <Header />
-          <CardDisplay />
+          <CardDisplay movies={this.state.movies}/>
         </div>
       </main>
     )
