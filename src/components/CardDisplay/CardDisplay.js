@@ -3,10 +3,9 @@ import "./CardDisplay.css";
 import Card from "../Card/Card";
 
 const CardDisplay = ({ movies }) => {
-  console.log(movies,'movies i think')
   const movieCards = movies.map(movie => {
     return (
-      <Card 
+      <Card
       key={movie.id} 
       id={movie.id} 
       img={movie.poster_path} 
