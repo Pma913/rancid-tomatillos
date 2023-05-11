@@ -7,10 +7,10 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-          {/* <Header />
-          <CardDisplay /> */}
-        </div>
+      <div>
+        {/* <Header />
+        <CardDisplay /> */}
+      </div>
     )
   }
 }
