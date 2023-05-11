@@ -1,19 +1,13 @@
 import React from "react";
 import "./CardDisplay.css";
-import Card from "../Card/Card"
+import Card from "../Card/Card";
 
 const CardDisplay = () => {
   return (
     <div className="card-display">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {/* list of cards here */}
     </div>
   )
 }
 
-export default CardDisplay
+export default CardDisplay;
