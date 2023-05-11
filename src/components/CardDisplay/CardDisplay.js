@@ -4,7 +4,13 @@ import Card from "../Card/Card"
 
 const CardDisplay = () => {
   return (
-    <div>
+    <div className="card-display">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
       <Card />
     </div>
   )
