@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount() {
     getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then(data => this.setState({ movies: data.movies }))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
   }
 
   render() {
