@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from '../HomePage/HomePage';
+import MoviePage from '../MoviePage/MoviePage';
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     if(this.state.movie) {
       return (
-        <div>{this.state.movie.title}</div>
+        <MoviePage props={this.state.movie} />
       )
     }
     else {
