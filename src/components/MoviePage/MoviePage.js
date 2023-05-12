@@ -1,13 +1,13 @@
 import React from 'react';
 
-const MoviePage = ({ props }) => {
-  console.log('tagline', props)
+const MoviePage = ({ props, clearState }) => {
+  console.log('tagline', clearState)
   return (
     <div>
       <div className="top">
         <img className="back-img" src={props.backdrop_path}/>
         <h2 className="movie-tag">{props.tagline}</h2>
-        <button className="home-btn">HOME</button>
+        <button className="home-btn" onClick={() => clearState()}>HOME</button>
       </div>
       <div className="left-side">
         <h2 className="movie-title">{props.title}</h2>

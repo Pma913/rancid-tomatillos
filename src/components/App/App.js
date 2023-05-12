@@ -10,10 +10,14 @@ class App extends Component {
     }
   }
 
+  clearState = () => {
+    this.setState({movie: null})
+  }
+
   render() {
     if(this.state.movie) {
       return (
-        <MoviePage props={this.state.movie} />
+        <MoviePage clearState={this.clearState} props={this.state.movie} />
       )
     }
     else {
