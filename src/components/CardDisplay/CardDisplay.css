@@ -3,5 +3,5 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 5px 10px;
-  background-color: black;
+  background: linear-gradient(#000000, #250101);
 }
