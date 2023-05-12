@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from '../HomePage/HomePage';
+import MoviePage from '../MoviePage/MoviePage';
 
 class App extends Component {
   constructor() {
@@ -9,10 +10,14 @@ class App extends Component {
     }
   }
 
+  clearState = () => {
+    this.setState({movie: null})
+  }
+
   render() {
     if(this.state.movie) {
       return (
-        <div>{this.state.movie.title}</div>
+        <MoviePage clearState={this.clearState} props={this.state.movie} />
       )
     }
     else {
