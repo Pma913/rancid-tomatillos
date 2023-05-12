@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CardDisplay from '../CardDisplay/CardDisplay';
-import { getMovies } from '../../utilities/api-calls'
+import { getMovies } from '../../utilities/api-calls';
 
 class HomePage extends Component {
   constructor(props) {
