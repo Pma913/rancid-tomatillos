@@ -2,14 +2,15 @@ import React from "react";
 import "./CardDisplay.css";
 import Card from "../Card/Card";
 
-const CardDisplay = ({ movies }) => {
+const CardDisplay = ({ movies, setMovie }) => {
   const movieCards = movies.map(movie => {
     return (
       <Card
       key={movie.id} 
       id={movie.id} 
       img={movie.poster_path} 
-      title={movie.title} />
+      title={movie.title} 
+      setMovie={setMovie} />
       )
   })
   return (

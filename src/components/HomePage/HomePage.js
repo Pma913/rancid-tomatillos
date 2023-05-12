@@ -4,8 +4,8 @@ import CardDisplay from '../CardDisplay/CardDisplay';
 import { getMovies } from '../../utilities/api-calls'
 
 class HomePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       movies: []
     }
@@ -22,7 +22,7 @@ class HomePage extends Component {
       <main>
         <div>
           <Header />
-          <CardDisplay movies={this.state.movies}/>
+          <CardDisplay movies={this.state.movies} setMovie={this.props.setMovie}/>
         </div>
       </main>
     )
