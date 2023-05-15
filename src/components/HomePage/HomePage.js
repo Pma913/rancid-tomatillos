@@ -12,9 +12,11 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    getMovies("https://rancid-tomatillos.herokuap.com/api/v2/movies")
     .then(data => this.setState({ movies: data.movies }))
-    .catch(err => console.log(err));
+    .catch(err => {
+      this.setState({ movies: [], error: err.message })
+    });
   }
 
   render() {
@@ -22,6 +24,7 @@ class HomePage extends Component {
       <main>
         <div>
           <Header />
+          {this.state.error && <h2>Ooooops! Looks like something went wrong, keep calm and try again 😩</h2>}
           <CardDisplay movies={this.state.movies} setMovie={this.props.setMovie}/>
         </div>
       </main>
