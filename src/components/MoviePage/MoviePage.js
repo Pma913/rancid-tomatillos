@@ -7,7 +7,6 @@ const MoviePage = ({ props, clearState }) => {
       <main style={{backgroundImage: `url(${props.backdrop_path})`}}>
         <div className="container">
           <div className="top">
-            {/* <img className="back-img" src={props.backdrop_path}/> */}
             <button className="home-btn" onClick={() => clearState()}><i className="arrow left"></i></button>
             <h2 className="movie-tag">{props.tagline}</h2>
           </div>
