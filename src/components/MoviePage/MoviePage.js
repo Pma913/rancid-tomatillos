@@ -21,7 +21,6 @@ const MoviePage = ({ props, clearState }) => {
           </div>
         </div>
       </main>
-    
   )
 }
 
