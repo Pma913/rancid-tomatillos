@@ -12,10 +12,11 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    getMovies("https://rancid-tomatillos.herokuap.com/api/v2/movies")
+    getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then(data => this.setState({ movies: data.movies }))
     .catch(err => {
       this.setState({ movies: [], error: err.message })
+      console.log(err)
     });
   }
 
