@@ -2,7 +2,6 @@ import React from 'react';
 import './MoviePage.css';
 
 const MoviePage = ({ props, clearState }) => {
-  console.log('tagline', clearState)
   return (
     <div>
       <div className="top">
