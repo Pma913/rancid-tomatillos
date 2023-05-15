@@ -7,7 +7,10 @@ const Card = ({ img, title, id, setMovie }) => {
     <div id={id} className="card" onClick={() => {
       getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(data => setMovie(data.movie))
-      .catch(err => console.log(err));
+      .catch(err => {
+        setMovie({}, err)
+        console.log(err)
+      });
     }}>
       <img className="poster" src={img}/>
       <h2 className="title">{title}</h2>
