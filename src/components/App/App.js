@@ -16,14 +16,24 @@ class App extends Component {
 
   render() {
     if(this.state.movie) {
-      return (
-        <MoviePage clearState={this.clearState} props={this.state.movie} />
-      )
+        {if (this.state.error) {
+          return (
+            <div>
+              <h2>Ooooops! Looks like something went wrong, keep calm and try again 😩</h2>
+              <button onClick={() => this.setState({ movie: null })}>TAKE ME BACK</button>
+            </div>
+          )
+        } else {
+          return (
+            <MoviePage clearState={this.clearState} props={this.state.movie} />
+          )
+        } 
+        }
     }
     else {
       return (
-        <HomePage setMovie={(movie) => {
-          this.setState({movie: movie})
+        <HomePage setMovie={(movie, err) => {
+          this.setState({movie: movie, error: err})
         }} />
       )
     }
