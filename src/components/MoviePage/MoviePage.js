@@ -1,27 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './MoviePage.css';
+import { getMovies } from '../../utilities/api-calls.js';
+import { Link } from "react-router-dom";
 
-const MoviePage = ({ props, clearState }) => {
-  console.log('tagline', clearState)
-  return (
-      <main style={{backgroundImage: `url(${props.backdrop_path})`}}>
+class MoviePage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movie: {}
+    }
+  }
+
+  componentDidMount() {
+    getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}`)
+    .then(data => {
+      this.setState({movie: data.movie})
+    })
+    .catch(err => console.log(err));
+  }
+
+  render() {
+    const movie = this.state.movie;
+    console.log(movie, 'movie page state')
+    return (
+      <main style={{backgroundImage: `url(${movie.backdrop_path})`}}>
         <div className="container">
           <div className="top">
-            <button className="home-btn" onClick={() => clearState()}><i className="arrow left"></i></button>
-            <h2 className="movie-tag">{props.tagline}</h2>
+            <Link to="/" className="home-btn"><i className="arrow left"></i></Link>
+            <h2 className="movie-tag">{movie.tagline}</h2>
           </div>
           <div className="movie-container">
             <div className="left-side">
-              <h2 className="movie-title">{props.title}</h2>
-              <p className="overview">{props.overview}</p>
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="overview">{movie.overview}</p>
             </div>
             <div className="right-side">
-              <img className="post-img" src={props.poster_path}/>
+              <img className="post-img" src={movie.poster_path}/>
             </div>
           </div>
         </div>
       </main>
   )
-}
+  }
+} 
 
 export default MoviePage;

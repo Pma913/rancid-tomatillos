@@ -96,6 +96,7 @@ body{
   width: 10px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+  margin-top: 15px;
 }
 
 .arrow:hover {
