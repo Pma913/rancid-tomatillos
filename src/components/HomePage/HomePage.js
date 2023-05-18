@@ -22,7 +22,7 @@ class HomePage extends Component {
       <main>
         <div>
           <Header />
-          <CardDisplay movies={this.state.movies} setMovie={this.props.setMovie}/>
+          <CardDisplay movies={this.state.movies} />
         </div>
       </main>
     )
