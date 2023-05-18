@@ -26,16 +26,12 @@ class MoviePage extends Component {
     ])
       .then(data => {
         if (data[1].videos[1]) {
-        console.log('there is a video')
-        console.log('video here', data[1].videos[1])
           this.setState({movie: data[0].movie, video: data[1].videos[1].key})
         } else {
-          console.log('there is no video')
           this.setState({movie: data[0].movie})
         }
       })
-      
-
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -47,8 +43,13 @@ class MoviePage extends Component {
             <Link to="/" className="home-btn"><i className="arrow left"></i></Link>
             <h2 className="movie-tag">{movie.tagline}</h2>
             <div className="movie-player">
+
               {this.state.video ? <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${this.state.video}`} /> :
-                <h2>Sorry, there currently is no video available for this movie</h2>}
+                <div>
+                  <h2>Sorry, there currently is no video available for this movie</h2>
+                  <p>Try searching <a href="https://www.youtube.com/">YouTube</a> for what you are looking for</p>
+                </div>}
+
             </div>
           </div>
           <div className="movie-container">
