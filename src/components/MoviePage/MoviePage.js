@@ -13,13 +13,6 @@ class MoviePage extends Component {
   }
 
   componentDidMount() {
-    // getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}`)
-    // .then(data => {
-    //   this.setState({movie: data.movie})
-    // })
-    // .catch(err => console.log(err));
-    
-    
     Promise.all([
       getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}`),
       getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}/videos`),
