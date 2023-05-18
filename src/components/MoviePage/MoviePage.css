@@ -118,3 +118,9 @@ body{
   border-radius: 6px;
   object-fit: contain;
 }
+
+.movie-player {
+  position: absolute;
+  left: 18%;
+  top: 16%;
+}
