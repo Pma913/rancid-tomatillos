@@ -4,6 +4,7 @@ import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 
+
 class MoviePage extends Component {
   constructor() {
     super();
@@ -24,7 +25,10 @@ class MoviePage extends Component {
           this.setState({movie: data[0].movie})
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({ movie: {}, error: err.message })
+        console.log(err)
+      });
   }
 
   render() {
@@ -54,11 +58,12 @@ class MoviePage extends Component {
               <p className="extra-details">Movie Runtime: {movie.runtime} minutes</p>
               {movie.genres && <p className="extra-details"> Genre: {movie.genres.join(", ")}</p>}
               <p className="extra-details">Average Rating: {movie.average_rating}</p>
+
             </div>
           </div>
-        </div>
-      </main>
-  )
+        </main>
+      )
+    }
   }
 } 
 
