@@ -26,7 +26,7 @@ class HomePage extends Component {
         <div>
           <Header />
         
-          {this.state.error ? <h2>Ooooops! Looks like something went wrong, keep calm and try again 😩</h2> :
+          {this.state.error ? <h2 className="error-message">😩 {this.state.error} 😩</h2> :
           <CardDisplay movies={this.state.movies} setMovie={this.props.setMovie}/>
           } 
         </div>
