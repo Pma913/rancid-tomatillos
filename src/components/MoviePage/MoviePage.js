@@ -61,9 +61,9 @@ class MoviePage extends Component {
 
             </div>
           </div>
-        </main>
-      )
-    }
+        </div>
+      </main>
+    )
   }
 } 
 
