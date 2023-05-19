@@ -1,45 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HomePage from '../HomePage/HomePage';
 import MoviePage from '../MoviePage/MoviePage';
+import { Route } from 'react-router-dom';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      movie: null
-    }
-  }
-
-  clearState = () => {
-    this.setState({movie: null})
-  }
-
-  render() {
-    if(this.state.movie) {
-        {if (this.state.error) {
-          return (
-            <div>
-              <h2>Ooooops! Looks like something went wrong, keep calm and try again 😩</h2>
-              <button onClick={() => this.setState({ movie: null })}>TAKE ME BACK</button>
-            </div>
-          )
-        } else {
-          return (
-            <MoviePage clearState={this.clearState} props={this.state.movie} />
-          )
-        } 
+const App = () => {
+  return (
+    <main>
+      <Route exact path="/" component={HomePage}/>
+      <Route exact path="/movie/:id" render={({match}) => {
+            return <MoviePage props={match.params.id} />
         }
-    }
-    else {
-      return (
-        <HomePage setMovie={(movie, err) => {
-          this.setState({movie: movie, error: err})
-        }} />
-      )
-    }
-  }
+      } />
+    </main>
+  )
 }
-
-
 
 export default App;
