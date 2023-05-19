@@ -110,8 +110,6 @@ body{
   -webkit-transform: rotate(135deg);
 }
 
-
-
 .post-img {
   height: 500px;
   width: 365px;
@@ -127,3 +125,8 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+.error-message {
+  color: white;
+  text-align: center;
+} 
