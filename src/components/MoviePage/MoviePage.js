@@ -33,33 +33,32 @@ class MoviePage extends Component {
 
   render() {
     const movie = this.state.movie;
-    if (this.state.error) {
-      return <h2 className="error-message">😩 {this.state.error} 😩</h2>
-    } else {
-      return (
-        <main style={{backgroundImage: `url(${movie.backdrop_path})`}}>
-          <div className="container">
-            <div className="top">
-              <Link to="/" className="home-btn"><i className="arrow left"></i></Link>
-              <h2 className="movie-tag">{movie.tagline}</h2>
+    return (
+      <main style={{backgroundImage: `url(${movie.backdrop_path})`}}>
+        <div className="container">
+          <div className="top">
+            <Link to="/" className="home-btn"><i className="arrow left"></i></Link>
+            <h2 className="movie-tag">{movie.tagline}</h2>
+          </div>
+          <div className="movie-container">
+            <div className="left-side">
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="overview">{movie.overview}</p>
               <div className="movie-player">
-
                 {this.state.video ? <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${this.state.video}`} /> :
-                  <div>
-                    <h2>Sorry, there currently is no video available for this movie</h2>
-                    <p>Try searching <a href="https://www.youtube.com/">YouTube</a> for what you are looking for</p>
-                  </div>}
-
-              </div>
+                  <div className="no-movies-wrapper">
+                    <h2 className="no-video">Sorry, there currently are no videos available for this movie</h2>
+                    <p className="no-video2">Try searching <a href="https://www.youtube.com/">YouTube</a> for what you are looking for</p>
+                  </div>
+                }
             </div>
-            <div className="movie-container">
-              <div className="left-side">
-                <h2 className="movie-title">{movie.title}</h2>
-                <p className="overview">{movie.overview}</p>
-              </div>
-              <div className="right-side">
-                <img className="post-img" src={movie.poster_path}/>
-              </div>
+            </div>
+            <div className="right-side">
+              <img className="post-img" src={movie.poster_path}/>
+              <p className="extra-details">Movie Runtime: {movie.runtime} minutes</p>
+              {movie.genres && <p className="extra-details"> Genre: {movie.genres.join(", ")}</p>}
+              <p className="extra-details">Average Rating: {movie.average_rating}</p>
+
             </div>
           </div>
         </main>
