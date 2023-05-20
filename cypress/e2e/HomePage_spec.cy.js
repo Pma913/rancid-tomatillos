@@ -5,7 +5,7 @@ beforeEach(() => {
 describe('Rancid Tomatillo homepage flows', () => {
   it('Should have visible title logo image', () => {
     cy.get('[alt="Rancid tomatillos text"]')
-    .should('be.visible')
+    .should("be.visible")
   });
 
   it('Should show a collections of movies on page load', () => {

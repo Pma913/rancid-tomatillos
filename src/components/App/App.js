@@ -8,11 +8,10 @@ const App = () => {
     <main>
       <Route exact path="/" component={HomePage}/>
       <Route exact path="/movie/:id" render={({match}) => {
-            return <MoviePage props={match.params.id} />
-        }
-      } />
+        return <MoviePage props={match.params.id} />
+      }} />
     </main>
-  )
+  );
 }
 
 export default App;

@@ -1,5 +1,5 @@
-import React from "react";
-import "./Card.css";
+import React from 'react';
+import './Card.css';
 
 const Card = ({ img, title, id }) => {
   return (
@@ -7,7 +7,7 @@ const Card = ({ img, title, id }) => {
       <img className="poster" src={img} alt={title}/>
       <h2 className="title">{title}</h2>
     </div>
-  )
+  );
 } 
 
 export default Card;
