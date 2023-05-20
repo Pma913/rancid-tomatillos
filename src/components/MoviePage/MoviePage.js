@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MoviePage.css';
 import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
+import Video from '../Video/Video';
 
 
 class MoviePage extends Component {
@@ -20,7 +20,7 @@ class MoviePage extends Component {
     ])
       .then(data => {
         if (data[1].videos[1]) {
-          this.setState({movie: data[0].movie, video: data[1].videos[1].key})
+          this.setState({movie: data[0].movie, videos: data[1].videos})
         } else {
           this.setState({movie: data[0].movie})
         }
@@ -46,12 +46,7 @@ class MoviePage extends Component {
                 <h2 className="movie-title">{movie.title}</h2>
                 <p className="overview">{movie.overview}</p>
                 <div className="movie-player">
-                  {this.state.video ? <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${this.state.video}`} /> :
-                    <div className="no-movies-wrapper">
-                      <h2 className="no-video">Sorry, there currently are no videos available for this movie</h2>
-                      <p className="no-video2">Try searching <a href="https://www.youtube.com/">YouTube</a> for what you are looking for</p>
-                    </div>
-                  }
+                  <Video allMovies={this.state.videos} />
                 </div>
               </div>
               <div className="right-side">
