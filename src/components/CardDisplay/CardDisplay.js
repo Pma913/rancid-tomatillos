@@ -2,6 +2,7 @@ import React from 'react';
 import './CardDisplay.css';
 import Card from '../Card/Card';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 const CardDisplay = ({ movies }) => {
   const movieCards = movies.map(movie => {
