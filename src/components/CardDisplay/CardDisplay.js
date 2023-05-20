@@ -23,3 +23,7 @@ const CardDisplay = ({ movies }) => {
 }
 
 export default CardDisplay;
+
+CardDisplay.propTypes = {
+  movies: PropTypes.array
+}

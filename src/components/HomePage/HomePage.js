@@ -13,8 +13,11 @@ class HomePage extends Component {
 
   componentDidMount() {
     getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(data => this.setState({ movies: data.movies }))
-      .catch(err => console.log(err));
+    .then(data => this.setState({ movies: data.movies }))
+    .catch(err => {
+      this.setState({ movies: [], error: err.message })
+      console.log(err)
+    });
   }
 
   render() {
@@ -22,7 +25,10 @@ class HomePage extends Component {
       <main>
         <div>
           <Header />
-          <CardDisplay movies={this.state.movies} />
+        
+          {this.state.error ? <h2 className="error-message">😩 {this.state.error} 😩</h2> :
+          <CardDisplay movies={this.state.movies} setMovie={this.props.setMovie}/>
+          } 
         </div>
       </main>
     )

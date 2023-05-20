@@ -1,5 +1,6 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
+import PropTypes from "prop-types";
 
 const Card = ({ img, title, id }) => {
   return (
@@ -11,3 +12,9 @@ const Card = ({ img, title, id }) => {
 } 
 
 export default Card;
+
+Card.propTypes = {
+  title: PropTypes.string,
+  img: PropTypes.string,
+  id: PropTypes.number
+}

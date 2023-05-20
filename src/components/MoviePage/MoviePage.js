@@ -4,6 +4,7 @@ import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
+
 class MoviePage extends Component {
   constructor() {
     super();
@@ -24,7 +25,10 @@ class MoviePage extends Component {
           this.setState({movie: data[0].movie})
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({ movie: {}, error: err.message })
+        console.log(err)
+      });
   }
 
   render() {
