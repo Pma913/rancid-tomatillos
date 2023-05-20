@@ -50,8 +50,6 @@ body {
 .movie-title,
 .overview,
 .movie-tag,
-.no-video, 
-.no-video2,
 .extra-details {
   color: white;
 }
@@ -107,12 +105,6 @@ body {
   margin-bottom: 75px;
   height: 360px;
   overflow: auto;
-}
-
-.no-movies-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* button styling */
