@@ -21,7 +21,7 @@ Welcome to Rancid Tomatillos, the completely unique app that is in no way shape 
   - Adriane Sutherland: [linkedin](https://www.linkedin.com/in/adrianesutherland/) | [github](https://github.com/asutherland91)
   - Patrick Ankiewicz: [linkedin](https://www.linkedin.com/in/patrick-ankiewicz/) | [github](https://github.com/Pma913)
 ## Illustrations
-COMING SOON
+![giph of project](https://media.giphy.com/media/OLaQJxYyb6FJ4hDrmD/giphy.gif)
 ## Deployed Page
 COMING SOON
 ## Wins
