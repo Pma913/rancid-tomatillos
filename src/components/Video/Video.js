@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import "./Video.css"
 
 const Video = ( { allMovies } ) => {
   if (allMovies) {
     const movies = allMovies.map(vid => {
       return (
-        <div key={vid.key} >
+        <div className="movie-wrapper" key={vid.key} >
           <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${vid.key}`} />
         </div>
       )
