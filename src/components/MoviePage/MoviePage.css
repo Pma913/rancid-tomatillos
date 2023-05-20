@@ -105,6 +105,8 @@ body {
   left: 18%;
   top: 16%;
   margin-bottom: 75px;
+  height: 360px;
+  overflow: auto;
 }
 
 .no-movies-wrapper {
