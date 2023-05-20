@@ -8,7 +8,7 @@ const Card = ({ img, title, id }) => {
       <img className="poster" src={img} alt={title}/>
       <h2 className="title">{title}</h2>
     </div>
-  )
+  );
 } 
 
 export default Card;
