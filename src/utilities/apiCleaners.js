@@ -11,4 +11,24 @@ const cleanMovie = ({ movie }) => {
   }
 }
 
-export { cleanMovie }
+const cleanVideos = ({ videos }) => {
+  return videos.map(video => {
+    return { key: video.key }
+  });
+}
+
+const cleanAllMovies = ({ movies }) => {
+  return movies.map(movie => {
+    return {
+      id: movie.id, 
+      poster_path: movie.poster_path,
+      title: movie.title 
+    }
+  });
+}
+
+export { 
+  cleanMovie, 
+  cleanVideos,
+  cleanAllMovies
+  }
