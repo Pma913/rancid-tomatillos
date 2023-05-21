@@ -3,6 +3,11 @@ describe('Error handling for individual movie page', () => {
     cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies/724495", (req) => {
       req.destroy()
     })
+    
+    cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies/724495/videos", (req) => {
+      req.destroy()
+    })
+    
     cy.visit("http://localhost:3000/")
       .get(".card-display")
       .contains("h2", "The Woman King").click()
