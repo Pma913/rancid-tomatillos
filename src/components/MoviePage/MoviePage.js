@@ -35,7 +35,6 @@ class MoviePage extends Component {
   render() {
     const movie = this.state.movie;
     if(movie.title) {
-    console.log('there is a movie title')
       return (
         <main style={{backgroundImage: `url(${movie.backdrop_path})`}}>
           <div className="container">
@@ -62,7 +61,6 @@ class MoviePage extends Component {
         </main>
       )
     } else {
-    console.log('there is no title')
       return <h2 className="error-message">😩 {this.state.error} 😩</h2>
     }
   }
