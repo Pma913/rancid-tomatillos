@@ -3,7 +3,7 @@ import './MoviePage.css';
 import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from 'react-router-dom';
 import Video from '../Video/Video';
-import { cleanMovie } from '../../utilities/apiCleaners';
+import { cleanMovie, cleanVideos } from '../../utilities/apiCleaners';
 
 
 class MoviePage extends Component {
@@ -22,7 +22,7 @@ class MoviePage extends Component {
       .then(data => {
       console.log(data, 'promise all data')
         if (data[1].videos[1]) {
-          this.setState({movie: cleanMovie(data[0]), videos: data[1].videos})
+          this.setState({movie: cleanMovie(data[0]), videos: cleanVideos(data[1])})
         } else {
           this.setState({movie: cleanMovie(data[0])})
         }
