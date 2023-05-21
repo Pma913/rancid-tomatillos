@@ -14,10 +14,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-    .then(data => {
-      console.log(data, 'home page fetch')
-      this.setState({ movies: cleanAllMovies(data) })
-    })
+    .then(data => this.setState({ movies: cleanAllMovies(data) }))
     .catch(err => {
       this.setState({ movies: [], error: err.message })
       console.log(err)

@@ -20,7 +20,6 @@ class MoviePage extends Component {
       getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}/videos`),
     ])
       .then(data => {
-      console.log(data, 'promise all data')
         if (data[1].videos[1]) {
           this.setState({movie: cleanMovie(data[0]), videos: cleanVideos(data[1])})
         } else {
