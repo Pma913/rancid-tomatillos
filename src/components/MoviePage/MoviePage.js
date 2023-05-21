@@ -3,6 +3,7 @@ import './MoviePage.css';
 import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from 'react-router-dom';
 import Video from '../Video/Video';
+import { cleanMovie } from '../../utilities/apiCleaners';
 
 
 class MoviePage extends Component {
@@ -19,10 +20,11 @@ class MoviePage extends Component {
       getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.props}/videos`),
     ])
       .then(data => {
+      console.log(data, 'promise all data')
         if (data[1].videos[1]) {
-          this.setState({movie: data[0].movie, videos: data[1].videos})
+          this.setState({movie: cleanMovie(data[0]), videos: data[1].videos})
         } else {
-          this.setState({movie: data[0].movie})
+          this.setState({movie: cleanMovie(data[0])})
         }
       })
       .catch(err => {
@@ -50,7 +52,7 @@ class MoviePage extends Component {
                 </div>
               </div>
               <div className="right-side">
-                <img className="post-img" src={movie.poster_path}/>
+                <img className="post-img" src={movie.poster_path} alt={movie.title}/>
                 <p className="extra-details">Movie Runtime: {movie.runtime} minutes</p>
                 {movie.genres && <p className="extra-details"> Genre: {movie.genres.join(", ")}</p>}
                 <p className="extra-details">Average Rating: {movie.average_rating}</p>
