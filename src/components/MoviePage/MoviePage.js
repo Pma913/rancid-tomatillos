@@ -3,6 +3,7 @@ import './MoviePage.css';
 import { getMovies } from '../../utilities/api-calls.js';
 import { Link } from 'react-router-dom';
 import Video from '../Video/Video';
+import { cleanMovie, cleanVideos } from '../../utilities/apiCleaners';
 
 
 class MoviePage extends Component {
@@ -20,9 +21,9 @@ class MoviePage extends Component {
     ])
       .then(data => {
         if (data[1].videos[1]) {
-          this.setState({movie: data[0].movie, videos: data[1].videos})
+          this.setState({movie: cleanMovie(data[0]), videos: cleanVideos(data[1])})
         } else {
-          this.setState({movie: data[0].movie})
+          this.setState({movie: cleanMovie(data[0])})
         }
       })
       .catch(err => {
@@ -34,6 +35,7 @@ class MoviePage extends Component {
   render() {
     const movie = this.state.movie;
     if(movie.title) {
+    console.log('there is a movie title')
       return (
         <main style={{backgroundImage: `url(${movie.backdrop_path})`}}>
           <div className="container">
@@ -50,7 +52,7 @@ class MoviePage extends Component {
                 </div>
               </div>
               <div className="right-side">
-                <img className="post-img" src={movie.poster_path}/>
+                <img className="post-img" src={movie.poster_path} alt={movie.title}/>
                 <p className="extra-details">Movie Runtime: {movie.runtime} minutes</p>
                 {movie.genres && <p className="extra-details"> Genre: {movie.genres.join(", ")}</p>}
                 <p className="extra-details">Average Rating: {movie.average_rating}</p>
@@ -59,6 +61,9 @@ class MoviePage extends Component {
           </div>
         </main>
       )
+    } else {
+    console.log('there is no title')
+      return <h2 className="error-message">😩 {this.state.error} 😩</h2>
     }
   }
 } 
