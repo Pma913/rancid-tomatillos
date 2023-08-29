@@ -47,7 +47,7 @@ class MoviePage extends Component {
                 <h2 className="movie-title">{movie.title}</h2>
                 <p className="overview">{movie.overview}</p>
                 <div className="movie-player">
-                  <Video allMovies={this.state.videos} />
+                  <Video movie={this.state.videos[0]} />
                 </div>
               </div>
               <div className="right-side">

@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import "./Video.css"
+import "./video.css"
 
-const Video = ( { allMovies } ) => {
-  if (allMovies) {
-    const movies = allMovies.map(vid => {
-      return (
-        <div className="movie-wrapper" key={vid.key} >
-          <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${vid.key}`} />
-        </div>
-      )
-    });
+const Video = ( { movie } ) => {
+  if (movie) {
     return (
       <div>
-        {movies}
+        {<ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${movie.key}`} />}
       </div>
     )
   } else {
